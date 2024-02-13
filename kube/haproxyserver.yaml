@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: haproxyserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: haproxyserver
+  template:
+    metadata:
+      labels:
+        app: haproxyserver
+    spec:
+      containers:
+      - name: haproxy
+        image: esmail1055/haproxy
+        ports:
+        - containerPort: 8080
+

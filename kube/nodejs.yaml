@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejsserver01
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejsserver01
+  template:
+    metadata:
+      labels:
+        app: nodejsserver01
+    spec:
+      containers:
+      - name: nodejs
+        image:  esmail1055/nodejs
+        ports:
+        - containerPort: 8081
+
